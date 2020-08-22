@@ -5,17 +5,173 @@
   padding: 0;
   margin: 0;
 }
+
 /* Main CSS */
-body {
-  display: grid;
-  grid-template-columns: 
-    calc( 100% / 3)
-    50%
-    calc( 100% - calc( 50% + calc( 100% / 3)));
-  grid-template-rows: 
-    10%
-    80%
-    10%;
-  background-image: url("https://cdn.pixabay.com/photo/2014/11/27/10/29/forest-547363_960_720.jpg");
-  background-size: cover;
+/* Tablet Landscape View */
+h1 {
+  grid-area: h1;
+}
+footer {
+  grid-area: foot;
+  color: white;
+}
+main {
+  grid-area: list;
+  background-color:	#f6f7f0;
+  border-radius: 5px;
+}
+main section h2 {
+  font-family: 'Open Sans', sans-serif;
+}
+#question {
+  grid-area: left;
+  color: 	#e3e4db;
+}
+#question h2 {
+  font-family: 'Fira Sans Condensed', sans-serif;
+}
+#right {
+  grid-area: right;
+}
+/* IPad / Tablet portrait view */
+@media screen and (min-width: 768px) {
+  body {
+    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: auto;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 
+      45%
+      50%
+      5%;
+    grid-template-rows: 
+      30%
+      330%
+      10%
+      ;
+    grid-template-areas: 
+      "h1 h1 h1"
+      "left list right"
+      "foot foot foot";
+  }
+  footer {
+    padding: 10px 0 0 10px;
+  }
+  main section h2 {
+    font-size: 20px;
+    padding: 20px 0 20px 20px;
+  }
+  #question {
+    padding: 75px 0 0 50px;
+  }
+  #question h2 {
+    font-size: 45px;
+  }
+}
+
+/* Tablet landscape / laptop view */
+@media screen and (min-width: 1024px) {
+  body {
+    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 
+      45%
+      50%
+      5%;
+    grid-template-rows: 
+      50px
+      600px
+      10px
+      ;
+    grid-template-areas: 
+      "h1 h1 h1"
+      "left list right"
+      "foot foot foot";
+  }
+  footer {
+    padding: 10px 0 0 10px;
+  }
+  main section h2 {
+    font-size: 20px;
+    padding: 20px 0 20px 20px;
+  }
+  #question {
+    padding: 75px 0 0 50px;
+  }
+  #question h2 {
+    font-size: 45px;
+  }
+}
+
+/* Small / medium laptop view */ 
+@media screen and (min-width: 1280px) {
+  body {
+    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 
+      45%
+      50%
+      5%;
+    grid-template-rows: 
+      20%
+      290%
+      10%
+      ;
+    grid-template-areas: 
+      "h1 h1 h1"
+      "left list right"
+      "foot foot foot";
+  }
+  footer {
+    padding: 10px 0 0 10px;
+  }
+  main section h2 {
+    font-size: 20px;
+    padding: 20px 0 20px 20px;
+  }
+  #question {
+    padding: 100px 0 0 75px;
+  }
+  #question h2 {
+    font-size: 45px;
+  }
+}
+/* Medium laptop / desktop view */
+@media screen and (min-width: 1440px) {
+  body {
+    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+    background-size: cover;
+    background-repeat: no-repeat;
+    display: grid;
+    grid-template-columns: 
+      45%
+      50%
+      5%;
+    grid-template-rows: 
+      30%
+      320%
+      10%
+      ;
+    grid-template-areas: 
+      "h1 h1 h1"
+      "left list right"
+      "foot foot foot";
+  }
+  footer {
+    padding: 10px 0 0 10px;
+  }
+  main section h2 {
+    font-size: 20px;
+    padding: 20px 0 20px 20px;
+  }
+  #question {
+    padding: 75px 0 0 50px;
+  }
+  #question h2 {
+    font-size: 45px;
+  }
 }
