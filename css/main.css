@@ -7,7 +7,10 @@
 }
 
 /* Main CSS */
-/* Tablet Landscape View */
+html {
+  height: 100%;
+  width: 100%;
+}
 h1 {
   grid-area: h1;
 }
@@ -24,7 +27,7 @@ main section h2 {
   font-family: 'Open Sans', sans-serif;
 }
 #question {
-  grid-area: left;
+  grid-area: quest;
   color: 	#e3e4db;
 }
 #question h2 {
@@ -33,25 +36,59 @@ main section h2 {
 #right {
   grid-area: right;
 }
+
+/* Phone view */
+body {
+  height: 70%;
+  position: relative;
+  background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
+  background-size: auto;
+  background-repeat: no-repeat;
+  display: grid;
+  grid-template-columns: 80% 20%;
+  grid-template-rows: 
+    35%
+    150%
+    50%
+    ;
+  grid-template-areas: 
+  "quest right"
+  "list right"
+  "foot foot";
+  padding: 25px 0 0 25px;
+}
+footer {
+  position: absolute;
+  padding: 10px 0 0 10px;
+  bottom: 0;
+}
+
+main section h2 {
+  font-size: 20px;
+  padding: 10px 0 20px 10px;
+}
+#question h2 {
+  font-size: 40px;
+}
+
 /* IPad / Tablet portrait view */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 600px) {
   body {
-    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: auto;
     background-repeat: no-repeat;
     display: grid;
     grid-template-columns: 
-      45%
       50%
-      5%;
+      48%
+      2%;
     grid-template-rows: 
-      30%
+      15%
       330%
       10%
       ;
     grid-template-areas: 
       "h1 h1 h1"
-      "left list right"
+      "quest list right"
       "foot foot foot";
   }
   footer {
@@ -87,7 +124,7 @@ main section h2 {
       ;
     grid-template-areas: 
       "h1 h1 h1"
-      "left list right"
+      "quest list right"
       "foot foot foot";
   }
   footer {
@@ -108,7 +145,6 @@ main section h2 {
 /* Small / medium laptop view */ 
 @media screen and (min-width: 1280px) {
   body {
-    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
@@ -123,7 +159,7 @@ main section h2 {
       ;
     grid-template-areas: 
       "h1 h1 h1"
-      "left list right"
+      "quest list right"
       "foot foot foot";
   }
   footer {
@@ -143,7 +179,6 @@ main section h2 {
 /* Medium laptop / desktop view */
 @media screen and (min-width: 1440px) {
   body {
-    background-image: url("https://images.pexels.com/photos/2098428/pexels-photo-2098428.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=750&w=1260");
     background-size: cover;
     background-repeat: no-repeat;
     display: grid;
@@ -158,7 +193,7 @@ main section h2 {
       ;
     grid-template-areas: 
       "h1 h1 h1"
-      "left list right"
+      "quest list right"
       "foot foot foot";
   }
   footer {
