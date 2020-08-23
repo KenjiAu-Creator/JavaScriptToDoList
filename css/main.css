@@ -153,8 +153,8 @@ main section h2 {
       50%
       5%;
     grid-template-rows: 
-      20%
-      290%
+      5%
+      150%
       10%
       ;
     grid-template-areas: 
@@ -163,7 +163,7 @@ main section h2 {
       "foot foot foot";
   }
   footer {
-    padding: 10px 0 0 10px;
+    padding: 10px 0 10px 10px;
   }
   main section h2 {
     font-size: 20px;
