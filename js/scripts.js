@@ -44,12 +44,15 @@ newToDoForm.addEventListener('submit', ( event ) => {
     {
       // checkbox is checked
       // Move item to completed list
+      newLI.classList.add( 'completed-item' );
       completeList.appendChild( newLI );
+
     }
     else
     {
       // checkbox is not checked
       // Add the new item in the to the active list
+      newLI.classList.remove( 'completed-item' );
       activeList.appendChild( newLI );
     }
   });

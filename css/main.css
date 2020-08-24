@@ -314,3 +314,7 @@ ul {
     opacity: 1;
   }
 }
+
+.completed-item {
+  text-decoration: line-through;
+}
