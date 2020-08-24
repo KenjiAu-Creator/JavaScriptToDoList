@@ -10,6 +10,8 @@
   <!-- Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:ital,wght@1,300&display=swap" rel="stylesheet">
+  <!-- Scripts -->
+  <script src="js/scripts.js" type="text/javascript" defer></script>
 
 </head>
 
@@ -24,14 +26,19 @@
     <section id="section1">
       <h2>New To-Do</h2>
       <form>
-        <input id="todo-new" type="text" placeholder="New To Do" autocomplete="off">
+        <label for="todo-new"></label>
+        <input id="todo-new" type="text" placeholder="New To Do" autocomplete="off" value="">
       </form>
     </section>
     <section id="section2">
       <h2>Active To Do's</h2>
+      <ul class="activeToDo">
+      </ul>
     </section>
     <section id="section3">
       <h2>Completed Activities</h2>
+      <ul class="completeToDo">
+      </ul>
     </section>
   </main>
   <section id="right">
