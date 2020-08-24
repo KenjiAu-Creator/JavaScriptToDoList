@@ -28,7 +28,7 @@ newToDoForm.addEventListener('submit', ( event ) => {
   newLI.textContent = `${toDoItem}`;
   newLI.prepend(newCheckBox);
   
-  // Add the new item in the to the active list
+  // Add the new item into the active list
   activeList.appendChild( newLI );
 
   // Reset the form
