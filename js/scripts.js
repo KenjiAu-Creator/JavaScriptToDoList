@@ -46,7 +46,6 @@ newToDoForm.addEventListener('submit', ( event ) => {
       // Move item to completed list
       newLI.classList.add( 'completed-item' );
       completeList.appendChild( newLI );
-
     }
     else
     {
