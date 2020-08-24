@@ -1,29 +1,24 @@
 // Grab the input form
 const newToDoForm = document.querySelector( "form" );
-console.log(newToDoForm);
 
 // Grab To Do item field
 const toDoField = document.getElementById( "todo-new");
 
 // Grab the Active list
 const activeList = document.querySelector( ".activeToDo" );
-console.log(activeList);
 
 // Grab the Complete list
 const completeList = document.querySelector( ".completeToDo" );
-console.log(completeList);
 
-// Add event to input form
+// Add event to move the new To Do Item into Active List.
 newToDoForm.addEventListener('submit', ( event ) => {
   event.preventDefault(); // Prevent the page from reloading!
-  console.log(event);
 
   // Create a new li element
   const newLI = document.createElement( 'LI');
 
   // Grab the user input from the form
   const toDoItem = toDoField.value;
-  console.log(toDoItem);
 
   // Create checkbox
   const newCheckBox = document.createElement( "INPUT" );
@@ -38,4 +33,25 @@ newToDoForm.addEventListener('submit', ( event ) => {
 
   // Reset the form
   newToDoForm.reset();
+
+  // Try to grab the checkbox on a list element now
+  console.log(newCheckBox);
+  // https://stackoverflow.com/questions/14544104/checkbox-check-event-listener
+  // Found code to check if a box is checked or not
+
+  newCheckBox.addEventListener( 'change', () => {
+    if(newCheckBox.checked)
+    {
+      // checkbox is checked
+      // Move item to completed list
+      completeList.appendChild( newLI );
+    }
+    else
+    {
+      // checkbox is not checked
+      // Add the new item in the to the active list
+      activeList.appendChild( newLI );
+    }
+  });
 });
+
