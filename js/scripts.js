@@ -141,7 +141,6 @@ newToDoForm.addEventListener('submit', (event) => {
   itemSpan.addEventListener('keypress', function (e) {
     if (e.key === 'Enter') {
       itemSpan.setAttribute("contenteditable", "false");
-      console.log("meep");
     }
   });
 });
