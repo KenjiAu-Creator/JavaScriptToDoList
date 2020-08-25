@@ -131,7 +131,7 @@ newToDoForm.addEventListener('submit', (event) => {
     // Look through completed lists elements
     for (let i = 0; i < completeList.childElementCount; i++) {
       if (completeList.children[i].children[1].textContent === itemSpan.textContent) {
-        // Edit the item from the list
+        // Make the item in the list editable
         completeList.children[i].children[1].setAttribute("contenteditable", "true");
       }
     }
