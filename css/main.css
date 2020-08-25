@@ -322,3 +322,6 @@ img {
 .completed-item {
   text-decoration: line-through;
 }
+.bold {
+  font-weight: bold;
+}

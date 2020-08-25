@@ -24,9 +24,32 @@ newToDoForm.addEventListener('submit', ( event ) => {
   const newCheckBox = document.createElement( "INPUT" );
   newCheckBox.type = "checkbox";
 
+  // Grab the date information
+  // https://stackoverflow.com/questions/1531093/how-do-i-get-the-current-date-in-javascript
+  // Found Date class to obtain current time.
+  let today = new Date();
+  const dd = String(today.getDate()).padStart(2, '0');
+  const mm = String(today.getMonth() + 1).padStart(2, '0'); //January is 0!
+  const hr = String(today.getHours()).padStart(2, '0');
+  const min = String(today.getMinutes()).padStart(2, '0');
+  const sec = String(today.getSeconds()).padStart(2, '0');
+  const yyyy = today.getFullYear();
+  today = dd + '-' + mm + '-' + yyyy;
+
+  // Create the bold start element
+  const startSpan = document.createElement( 'SPAN' );
+  startSpan.textContent = `Start: `;
+  startSpan.classList.add("bold");
+
+  // Create the time string element
+  const timeSpan = document.createElement( 'SPAN' );
+  timeSpan.textContent = `${today} ${hr}:${min}:${sec}`;
+
   // Insert value into the LI
-  newLI.textContent = `${toDoItem}`;
+  newLI.textContent = `${toDoItem} `;
   newLI.prepend(newCheckBox);
+  newLI.append(startSpan);
+  newLI.append(timeSpan);
   
   // Add the new item into the active list
   activeList.appendChild( newLI );
