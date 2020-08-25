@@ -325,3 +325,6 @@ img {
 .bold {
   font-weight: bold;
 }
+button {
+  padding: 0 5px;
+}

@@ -36,6 +36,10 @@ newToDoForm.addEventListener('submit', ( event ) => {
   const yyyy = today.getFullYear();
   today = dd + '-' + mm + '-' + yyyy;
 
+  // Create the delete button
+  const deleteBttn = document.createElement( 'BUTTON' );
+  deleteBttn.innerHTML = "Delete";
+
   // Create the bold start element
   const startSpan = document.createElement( 'SPAN' );
   startSpan.textContent = `Start: `;
@@ -43,13 +47,18 @@ newToDoForm.addEventListener('submit', ( event ) => {
 
   // Create the time string element
   const timeSpan = document.createElement( 'SPAN' );
-  timeSpan.textContent = `${today} ${hr}:${min}:${sec}`;
+  timeSpan.textContent = `${today} ${hr}:${min}:${sec} `;
 
   // Insert value into the LI
   newLI.textContent = `${toDoItem} `;
+  // Appending checkbox to new item
   newLI.prepend(newCheckBox);
+  // Appending the start span to new item
   newLI.append(startSpan);
+  // Appending the time span to new item
   newLI.append(timeSpan);
+  // Appending the delete button to new item
+  newLI.append(deleteBttn);
   
   // Add the new item into the active list
   activeList.appendChild( newLI );
@@ -57,8 +66,8 @@ newToDoForm.addEventListener('submit', ( event ) => {
   // Reset the form
   newToDoForm.reset();
 
-  // Try to grab the checkbox on a list element now
-  console.log(newCheckBox);
+
+  // Writing the code for moving items between the active and complete.
   // https://stackoverflow.com/questions/14544104/checkbox-check-event-listener
   // Found code to check if a box is checked or not
 
@@ -76,6 +85,29 @@ newToDoForm.addEventListener('submit', ( event ) => {
       // Add the new item in the to the active list
       newLI.classList.remove( 'completed-item' );
       activeList.appendChild( newLI );
+    }
+  });
+
+  // Code for deleting the to do item.
+  deleteBttn.addEventListener( 'click', () => {
+    // Look through active lists element first
+    for (let i  = 0; i < activeList.childElementCount; i++ )
+    {
+      if (activeList.children[i].textContent === newLI.textContent)
+      {
+        // Remove this child from the list
+        activeList.removeChild(activeList.children[i]);
+      }
+    }
+
+    // Look through completed lists elements
+    for (let i = 0; i < completeList.childElementCount; i++ )
+    {
+      if (completeList.children[i].textContent === newLI.textContent)
+      {
+        // Remove this child from the list
+        completeList.removeChild(completeList.children[i]);
+      }
     }
   });
 });
